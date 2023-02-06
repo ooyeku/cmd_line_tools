@@ -1,30 +1,18 @@
 package main
 
-// command line tool for meditation and basic breathing exercises. By default, program will run 5 cycles of a 5 second inhale
-// followed by a 5 second hold and a 5 second exhale.
-// Flags: 	-n number of cycles
-// 			-inhale number of seconds to inhale
-// 			-exhale number of seconds to exhale
-// 			-hold number of seconds to hold breathe between inhale and exhale
-//
-// Ex:
-// go run meditate.go -n 3 -inhale 3 -exhale 5 -hold 4
-// - will run a session with 3 rounds of 3 seconds inhales, a 4 second hold, then a 5 second exhale
-
+// breathing exercises
 import (
 	"flag"
 	"fmt"
 	"time"
 )
 
-// getReady provides a count down to provide a buffer before the start of inhale/exhale session
 func getReady() { // getting ready for breathing exercise
 	fmt.Println("Relax and Prepare to inhale...")
 	time.Sleep(time.Second * 5)
 
 }
 
-// breatheIn takes inhale, exhale, and hold second times as integers and executes the main meditation loop.
 func breatheIn(inhale, exhale, hold int) {
 	// buffer to get ready
 	time.Sleep(time.Second * 3)
@@ -46,7 +34,6 @@ func breatheIn(inhale, exhale, hold int) {
 	fmt.Println("Well Done!!")
 }
 
-// TODO: delete
 func waiting() {
 	for {
 		time.Sleep(time.Second)
