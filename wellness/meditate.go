@@ -6,6 +6,7 @@ package main
 // 			-inhale number of seconds to inhale
 // 			-exhale number of seconds to exhale
 // 			-hold number of seconds to hold breathe between inhale and exhale
+//
 // Ex:
 // go run meditate.go -n 3 -inhale 3 -exhale 5 -hold 4
 // - will run a session with 3 rounds of 3 seconds inhales, a 4 second hold, then a 5 second exhale
