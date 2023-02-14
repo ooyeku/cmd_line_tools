@@ -1,23 +1,29 @@
 import sys
+import os
 
 """
-Simple Command Line script that prints the content of specified textfile to terminal.  
-Ex: python3 text_file_printer.py <path_to_.txt_file> 
+Command Line script that prints or opens files of various types based on their extension.  
+Ex: python3 file_opener.py <file_path> 
 """
 
 
-def print_file_contents(file_path):
-    try:
+def open_file(file_path):
+    file_extension = os.path.splitext(file_path)[1]
+    if file_extension == '.txt':
         with open(file_path, 'r') as file:
             print(file.read())
-    except FileNotFoundError:
-        print(f"Error: The file '{file_path}' does not exist.")
+    elif file_extension == '.pdf':
+        os.system(f'open "{file_path}"')
+    elif file_extension == '.csv':
+        os.system(f'pandas "{file_path}"')
+    else:
+        print(f"Error: The file extension '{file_extension}' is not supported.")
         sys.exit(1)
 
 
 if __name__ == '__main__':
     if len(sys.argv) != 2:
         print("Error: Incorrect number of arguments.")
-        print("Usage: python print_file_contents.py <file_path>")
+        print("Usage: python file_opener.py <file_path>")
         sys.exit(1)
-    print_file_contents(sys.argv[1])
+    open_file(sys.argv[1])

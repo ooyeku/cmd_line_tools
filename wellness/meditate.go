@@ -16,14 +16,14 @@ import (
 	"time"
 )
 
-// getReady creates buffer to prepare for inhale/exhale cycle
+// ready creates buffer to prepare for inhale/exhale cycle
 func getReady() {
 	fmt.Println("Relax and Prepare to inhale...")
 	time.Sleep(time.Second * 5)
 
 }
 
-// breatheIn uses an inhale, exhale, and hold variable to create the main meditation loop
+// in uses an inhale, exhale, and hold variable to create the main meditation loop
 func breatheIn(inhale, exhale, hold int) {
 	// buffer to get ready
 	time.Sleep(time.Second * 3)
@@ -43,18 +43,6 @@ func breatheIn(inhale, exhale, hold int) {
 		time.Sleep(time.Second * 1)
 	}
 	fmt.Println("Well Done!!")
-}
-
-// TODO: delete
-func waiting() {
-	for {
-		time.Sleep(time.Second)
-		fmt.Println("...")
-		time.Sleep(time.Second)
-		fmt.Println("...")
-		time.Sleep(time.Second)
-	}
-
 }
 
 func main() {
